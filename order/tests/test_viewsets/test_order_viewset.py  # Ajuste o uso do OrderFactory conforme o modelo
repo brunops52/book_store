@@ -1,0 +1,16 @@
+from django.test import TestCase
+from order.factories import OrderFactory
+from order.models import Order
+
+class TestOrderViewset(TestCase):
+    def setUp(self):
+        self.product = ...  # Initialize product as needed
+        self.order = OrderFactory(product=[self.product])
+
+    def test_create_order(self):
+        response = self.client.post('/orders/', {'product': self.order.product.id})
+        self.assertEqual(response.status_code, 201)
+
+    def test_order(self):
+        response = self.client.get('/orders/')
+        self.assertEqual(response.status_code, 200)
