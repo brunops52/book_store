@@ -1,0 +1,12 @@
+class OrderFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = 'order.Order'
+
+    product = factory.SubFactory('product.ProductFactory')
+    # Remove user from direct arguments
+    # Add any other necessary fields here
+
+    @factory.lazy_attribute
+    def user(self):
+        return User.objects.first()  # or any logic to assign a user
+
