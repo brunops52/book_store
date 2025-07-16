@@ -1,6 +1,7 @@
 # `python-base` sets up all our shared environment variables
 FROM python:3.10-slim AS python-base
 
+    # alterando o código para gerar o pull request
     # python
 ENV PYTHONUNBUFFERED=1 \
     # prevents python creating .pyc files
