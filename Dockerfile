@@ -1,4 +1,6 @@
 # `python-base` sets up all our shared environment variables
+# This is the base image for all python images.
+
 FROM python:3.10-slim AS python-base
 
 
