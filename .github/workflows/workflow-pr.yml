@@ -28,7 +28,8 @@ jobs:
 
       - name: Test
         run: |
-          python -c "from django.conf import settings; print(settings.ALLOWED_HOSTS)"
+          export DJANGO_SETTINGS_MODULE="bookstore.settings"
+          export DJANGO_ALLOWED_HOSTS="localhost 127.0.0.1"
           poetry run python manage.py test
       - name: Wemake Python Stylguide
         uses: wemake-services/wemake-python-styleguide@0.16.0
