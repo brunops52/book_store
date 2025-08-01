@@ -28,6 +28,7 @@ jobs:
 
       - name: Test
         run: |
+          python -c "from django.conf import settings; print(settings.ALLOWED_HOSTS)"
           poetry run python manage.py test
       - name: Wemake Python Stylguide
         uses: wemake-services/wemake-python-styleguide@0.16.0
