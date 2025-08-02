@@ -24,7 +24,7 @@ services:
     build: .
     command: sh -c "sleep 20 && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/usr/src/app/
+      - app_data:/usr/src/app/
     ports:
       - 8000:8000
     env_file:
@@ -40,3 +40,4 @@ networks:
 
 volumes:
   postgres_data:
+  app_data:
